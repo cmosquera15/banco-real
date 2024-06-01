@@ -7,7 +7,6 @@ export const Login = ({ onLoginSuccess }) => {
     user: '',
     securityKey: ''
   });
-  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,48 +16,32 @@ export const Login = ({ onLoginSuccess }) => {
     });
   };
 
-  const validateForm = () => {
-    const userRegex = /^.{8,}$/;
-    const securityKeyRegex = /^[0-9]{4}$/;
-
-    if (!userRegex.test(formData.user)) {
-      return 'Usuario debe tener al menos 8 caracteres.';
-    }
-    if (!securityKeyRegex.test(formData.securityKey)) {
-      return 'Clave debe tener exactamente 4 números.';
-    }
-
-    return '';
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const errorMessage = validateForm();
-    if (errorMessage) {
-      setError(errorMessage);
-      return;
+    const transferData = {
+      user: formData.user,
+      securityKey: formData.securityKey
     }
 
     try {
-      const userData = await getClient(formData);
+      const userData = await getClient(transferData);
       onLoginSuccess(userData);
     } catch (err) {
-      setError('Error en el inicio de sesión, por favor intente nuevamente.');
+      alert('Error en el inicio de sesión, por favor intente nuevamente.');
     }
   };
 
   return (
     <div className="Login">
       <h2>Iniciar sesión</h2>
-      {error && <p className="error">{error}</p>}
       <form onSubmit={handleSubmit}>
         <label>
           Usuario:
-          <input type="text" name="user" value={formData.user} onChange={handleChange} required/>
+          <input type="text" name="user" value={formData.user} onChange={handleChange} required minLength="8" title="El usuario debe tener al menos 8 caracteres" />
         </label>
         <label>
           Clave:
-          <input type="password" name="securityKey" value={formData.securityKey} onChange={handleChange} required/>
+          <input type="password" name="securityKey" value={formData.securityKey} onChange={handleChange} required pattern="\d{4}" title="La clave debe contener exactamente 4 números" />
         </label>
         <button type="submit">Iniciar sesión</button>
       </form>

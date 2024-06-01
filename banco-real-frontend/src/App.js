@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { SignUp } from './components/SignUp';
 import { Login } from './components/Login';
 import { Home } from './components/Home';
@@ -82,9 +82,6 @@ function App() {
             <button id='App-SignUp-btn' onClick={handleSignUpClick}>Registrarse</button>
             {userManagementComponent}
           </div>
-          <Routes>
-            <Route path="/" element={<Home user={user} onLogout={handleLogout} />} />
-          </Routes>
           {currentComponent}
         </main>
 

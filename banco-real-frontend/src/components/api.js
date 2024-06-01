@@ -2,20 +2,9 @@ const URL_DB = "http://localhost:8080/banco-real-backend-1.0-SNAPSHOT";
 
 export const createClient = async (formData) => {
   try {
-    const response = await fetch(`${URL_DB}/signup`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    });
-
-    if (!response.ok) {
-      throw new Error('Error creating client');
-    }
-
-    const data = await response.json();
-    return data.accounts; // Asumiendo que el backend responde con accounts
+    const response = await fetch(`${URL_DB}/signup`, formData);
+    const data = await response;
+    return data.accounts;
   } catch (error) {
     throw new Error('Error creating client: ' + error.message);
   }

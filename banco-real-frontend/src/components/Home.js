@@ -8,17 +8,19 @@ export const Home = ({ user, onLogout }) => {
     const [selectedAccount, setSelectedAccount] = useState(null);
 
     useEffect(() => {
-        const fetchAccounts = async () => {
-            try {
-                const accounts = await getAccountsByClientId(user.clientId);
-                setAccounts(accounts);
-            } catch (error) {
-                console.error("Error buscando cuentas:", error);
-            }
-        };
+        if (user && user.clientId) {
+            const fetchAccounts = async () => {
+                try {
+                    const accounts = await getAccountsByClientId(user.clientId);
+                    setAccounts(accounts);
+                } catch (error) {
+                    console.error("Error buscando cuentas:", error);
+                }
+            };
 
-        fetchAccounts();
-    }, [user.clientId]);
+            fetchAccounts();
+        }
+    }, [user]);
 
     const handleAccountClick = (accountId) => {
         const account = accounts.find(account => account.accountId === accountId);
