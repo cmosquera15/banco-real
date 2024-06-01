@@ -96,5 +96,3 @@ export const Home = ({ user, onLogout }) => {
         </div>
     );
 };
-
-export default Home;

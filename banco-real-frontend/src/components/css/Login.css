@@ -25,7 +25,7 @@ form {
 
 label {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   margin-bottom: 10px;
   font-size: 18px;
   color: #27343f;

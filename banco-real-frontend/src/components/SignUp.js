@@ -67,7 +67,7 @@ export const SignUp = ({ handleLoginSuccess }) => {
             </label>
             <label>
               Apellido:
-              <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required pattern="[A-Za-z]+" title="El apellido olo puede contener letras"/>
+              <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required pattern="[A-Za-z]+" title="El apellido solo puede contener letras"/>
             </label>
             <label>
               No. de identificación:
@@ -91,8 +91,7 @@ export const SignUp = ({ handleLoginSuccess }) => {
           </div>
           <div className="button-section">
             <button onClick={handleBackToPart1}>Regresar</button>
-            <button type="submit">Registrar</button>
-            <p className='SignUp-message'>¿Ya tienes una cuenta? <span>Inicia sesión</span></p>
+            <button type="submit">Registrarse</button>
           </div>
         </form>
       )}
