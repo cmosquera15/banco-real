@@ -1,0 +1,78 @@
+.MoneyWithdrawal {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #A8D1DC;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .MoneyWithdrawal fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .MoneyWithdrawal legend {
+    font-size: 24px;
+    color: #27343f;
+    margin-bottom: 20px;
+  }
+  
+  .MoneyWithdrawal-label {
+    display: block;
+    font-size: 16px;
+    color: #27343f;
+    margin-bottom: 5px;
+  }
+  
+  .MoneyWithdrawal input[type='number'],
+  .MoneyWithdrawal select,
+  .MoneyWithdrawal input[type='password'] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #A8D1DC;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .MoneyWithdrawal select {
+    appearance: none;
+    background: url('data:image/svg+xml;utf8,<svg fill="%2327343f" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>') no-repeat;
+    background-position: calc(100% - 10px) center;
+    background-size: 20px;
+    padding-right: 30px;
+  }
+  
+  .MoneyWithdrawal .submit-button,
+  .MoneyWithdrawal .back-button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .MoneyWithdrawal .submit-button {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .MoneyWithdrawal .submit-button:hover {
+    background-color: #45a049;
+  }
+  
+  .MoneyWithdrawal .back-button {
+    background-color: #CA3C25;
+    color: white;
+  }
+  
+  .MoneyWithdrawal .back-button:hover {
+    background-color: #9E2A1A;
+  }
+  
