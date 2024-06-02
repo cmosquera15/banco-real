@@ -54,50 +54,76 @@ export const getTransactionsByAccountId = async (accountId) => {
     }
 
     const data = await response.json();
-    return data.transactions;
+    return data;
   } catch (error) {
     throw new Error('Error fetching transactions: ' + error.message);
   }
 };
 
-export const withdrawMoney = async (withdrawData) => {
+// export const withdrawMoney = async (withdrawData) => {
+//   try {
+//     const response = await fetch(`${URL_DB}/account/withdraw`, {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json'
+//       },
+//       body: JSON.stringify(withdrawData)
+//     });
+
+//     if (!response.ok) {
+//       throw new Error('Error withdrawing money');
+//     }
+
+//     const data = await response.json();
+//     return data;
+//   } catch (error) {
+//     throw new Error('Error withdrawing money: ' + error.message);
+//   }
+// };
+
+export const withdrawMoney = async (transferData) => {
   try {
-    const response = await fetch(`${URL_DB}/account/withdraw`, {
-      method: 'POST',
+    const response = await axios.post(`${URL_DB}/account/withdraw`, transferData, {
       headers: {
         'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(withdrawData)
+      }
     });
-
-    if (!response.ok) {
-      throw new Error('Error withdrawing money');
-    }
-
-    const data = await response.json();
-    return data;
+    return response;
   } catch (error) {
-    throw new Error('Error withdrawing money: ' + error.message);
+    throw new Error('Error retirando dinero ' + error.message);
   }
 };
 
+// export const transferMoney = async (transferData) => {
+//   try {
+//     const response = await fetch(`${URL_DB}/account/transfer`, {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json'
+//       },
+//       body: JSON.stringify(transferData)
+//     });
+
+//     if (!response.ok) {
+//       throw new Error('Error transferring money');
+//     }
+
+//     const data = await response.json();
+//     return data;
+//   } catch (error) {
+//     throw new Error('Error transferring money: ' + error.message);
+//   }
+// };
+
 export const transferMoney = async (transferData) => {
   try {
-    const response = await fetch(`${URL_DB}/account/transfer`, {
-      method: 'POST',
+    const response = await axios.post(`${URL_DB}/account/transfer`, transferData, {
       headers: {
         'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(transferData)
+      }
     });
-
-    if (!response.ok) {
-      throw new Error('Error transferring money');
-    }
-
-    const data = await response.json();
-    return data;
+    return response;
   } catch (error) {
-    throw new Error('Error transferring money: ' + error.message);
+    throw new Error('Error transfiriendo dinero ' + error.message);
   }
 };

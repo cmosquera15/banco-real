@@ -3,10 +3,6 @@
   max-width: 600px;
   margin: 20px auto;
   padding: 20px;
-  border: 1px solid #A8D1DC;
-  border-radius: 8px;
-  background-color: #FFFFFF;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .MoneyTransfer fieldset {
@@ -19,6 +15,7 @@
   font-size: 24px;
   color: #27343f;
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .MoneyTransfer-label {
@@ -33,11 +30,10 @@
 .MoneyTransfer input[type='number'],
 .MoneyTransfer select {
   width: calc(100% - 20px);
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 15px;
   border: 1px solid #A8D1DC;
-  border-radius: 4px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .MoneyTransfer .radio-group {
@@ -62,7 +58,6 @@
   padding: 10px 20px;
   margin-top: 10px;
   border: none;
-  border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -78,12 +73,12 @@
 }
 
 .MoneyTransfer .prev-button {
-  background-color: #FFD700;
-  color: #27343f;
+  background-color: #3F5465;
+  color: white;
 }
 
 .MoneyTransfer .prev-button:hover {
-  background-color: #E6C200;
+  background-color: #27343f;
 }
 
 .MoneyTransfer .submit-button {
@@ -96,17 +91,17 @@
 }
 
 .MoneyTransfer .back-button {
+  align-self: flex-start;
   padding: 10px 20px;
-  margin-top: 20px;
+  margin-bottom: 20px;
   border: none;
-  border-radius: 4px;
+  background-color: #3F5465;
+  color: white;
   font-size: 16px;
   cursor: pointer;
-  background-color: #CA3C25;
-  color: white;
   transition: background-color 0.3s ease;
 }
 
 .MoneyTransfer .back-button:hover {
-  background-color: #9E2A1A;
+  background-color: #27343f;
 }

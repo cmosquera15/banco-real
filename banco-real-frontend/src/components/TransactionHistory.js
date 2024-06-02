@@ -39,6 +39,12 @@ export const TransactionHistory = ({ account, onBack }) => {
     }
   };
 
+  const formatDate = (dateString) => {
+    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+    const date = new Date(dateString);
+    return date.toLocaleDateString('es-ES', options);
+  };
+
   if (!account) {
     return (
       <div>
@@ -64,7 +70,6 @@ export const TransactionHistory = ({ account, onBack }) => {
                   <th>Moneda</th>
                   <th>Tipo</th>
                   <th>Fecha</th>
-                  <th>Cuenta</th>
                 </tr>
               </thead>
               <tbody>
@@ -74,8 +79,7 @@ export const TransactionHistory = ({ account, onBack }) => {
                     <td>{transaction.amount}</td>
                     <td>{transaction.currency}</td>
                     <td>{getTransactionTypeLabel(transaction.transactionType)}</td>
-                    <td>{transaction.date}</td>
-                    <td>{transaction.accountId}</td>
+                    <td>{formatDate(transaction.transactionDate)}</td>
                   </tr>
                 ))}
               </tbody>

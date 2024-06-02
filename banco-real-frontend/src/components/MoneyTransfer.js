@@ -69,15 +69,15 @@ export const MoneyTransfer = ({ client, account, onBack }) => {
 
               <label className='MoneyTransfer-label'>Tipo de cuenta</label>
               <div className='radio-group'>
-                <div>
+                <div className='radio-option'>
                   <input type='radio' id='current' name='accountType' value='current' checked={formData.accountType === 'current'} onChange={handleChange}/>
                   <label htmlFor='current'>Corriente</label>
                 </div>
-                <div>
+                <div className='radio-option'>
                   <input type='radio' id='savings' name='accountType' value='savings' checked={formData.accountType === 'savings'} onChange={handleChange}/>
                   <label htmlFor='savings'>Ahorros</label>
                 </div>
-                <div>
+                <div className='radio-option'>
                   <input type='radio' id='supreme' name='accountType' value='supreme' checked={formData.accountType === 'supreme'} onChange={handleChange}/>
                   <label htmlFor='supreme'>Suprema</label>
                 </div>

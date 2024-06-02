@@ -1,56 +1,55 @@
 .TransactionHistory {
-    width: 100%;
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #A8D1DC;
-    border-radius: 8px;
-    background-color: #FFFFFF;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .TransactionHistory h2 {
-    font-size: 24px;
-    color: #27343f;
-    margin-bottom: 20px;
-  }
-  
-  .TransactionHistory p {
-    font-size: 16px;
-    color: #27343f;
-    margin-bottom: 20px;
-  }
-  
-  .TransactionHistory .TransactionHistory-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .TransactionHistory .TransactionHistory-table th,
-  .TransactionHistory .TransactionHistory-table td {
-    border: 1px solid #A8D1DC;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .TransactionHistory .TransactionHistory-table th {
-    background-color: #f2f2f2;
-    color: #27343f;
-  }
-  
-  .TransactionHistory .back-button {
-    padding: 10px 20px;
-    margin-top: 20px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: #CA3C25;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .TransactionHistory .back-button:hover {
-    background-color: #9E2A1A;
-  }
-  
+  max-width: 800px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.TransactionHistory h2 {
+  font-size: 24px;
+  color: #27343f;
+  margin-bottom: 20px;
+}
+
+.TransactionHistory p {
+  font-size: 16px;
+  color: #27343f;
+  margin-bottom: 20px;
+}
+
+.TransactionHistory .TransactionHistory-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.TransactionHistory .TransactionHistory-table th,
+.TransactionHistory .TransactionHistory-table td {
+  border: 1px solid #6787a5;
+  padding: 10px;
+  text-align: center;
+}
+
+.TransactionHistory .TransactionHistory-table td {
+  color: #27343f;
+}
+
+.TransactionHistory .TransactionHistory-table th {
+  background-color: #A8D1DC;
+  color: #27343f;
+}
+
+.TransactionHistory .back-button {
+  align-self: flex-start;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border: none;
+  background-color: #3F5465;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.TransactionHistory .back-button:hover {
+  background-color: #27343f;
+}

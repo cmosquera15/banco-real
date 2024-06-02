@@ -43,7 +43,6 @@ function App() {
   };
 
   const handleLoginSuccess = (userData) => {
-    console.log(userData);
     setUser(userData);
     setCurrentComponent(<Home user={userData} onLogout={handleLogout} />);
     setUserManagementComponent(null);
