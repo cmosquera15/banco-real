@@ -39,15 +39,14 @@ export const SignUp = ({ handleLoginSuccess }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const transferData = {
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      clientId: formData.clientId,
-      user: formData.user,
-      securityKey: formData.securityKey
-    }
-
     try {
+      const transferData = {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        clientId: formData.clientId,
+        user: formData.user,
+        securityKey: formData.securityKey
+      }
       const userData = await createClient(transferData);
       handleLoginSuccess(userData);
     } catch (e) {
@@ -58,8 +57,8 @@ export const SignUp = ({ handleLoginSuccess }) => {
   return (
     <div className="SignUp">
       <h2>Registrarse</h2>
-      {formPart === 1 && (
-        <form onSubmit={validateFormPart1}>
+      <form onSubmit={formPart === 1 ? validateFormPart1 : handleSubmit}>
+        {formPart === 1 && (
           <div className="form-section">
             <label>
               Nombre:
@@ -73,12 +72,10 @@ export const SignUp = ({ handleLoginSuccess }) => {
               No. de identificación:
               <input type="text" name="clientId" value={formData.clientId} onChange={handleChange} required pattern="[A-Za-z0-9]{8,50}" title="El no. de identificación solo debe contener entre 8 y 50 números y/o letras"/>
             </label>
+            <button type="button" onClick={validateFormPart1}>Continuar</button>
           </div>
-          <button type="submit">Continuar</button>
-        </form>
-      )}
-      {formPart === 2 && (
-        <form onSubmit={handleSubmit}>
+        )}
+        {formPart === 2 && (
           <div className="form-section">
             <label>
               Usuario:
@@ -88,13 +85,13 @@ export const SignUp = ({ handleLoginSuccess }) => {
               Clave:
               <input type="password" name="securityKey" value={formData.securityKey} onChange={handleChange} required pattern="\d{4}" title="La clave debe contener exactamente 4 números"/>
             </label>
+            <div className="button-section">
+              <button type="button" onClick={handleBackToPart1}>Regresar</button>
+              <button type="submit">Registrarse</button>
+            </div>
           </div>
-          <div className="button-section">
-            <button onClick={handleBackToPart1}>Regresar</button>
-            <button type="submit">Registrarse</button>
-          </div>
-        </form>
-      )}
+        )}
+      </form>
     </div>
   );
 };

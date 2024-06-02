@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './css/Login.css';
 import { getClient } from './api';
 
-export const Login = ({ onLoginSuccess }) => {
+export const Login = ({ handleLoginSuccess }) => {
   const [formData, setFormData] = useState({
     user: '',
     securityKey: ''
@@ -18,15 +18,14 @@ export const Login = ({ onLoginSuccess }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const transferData = {
-      user: formData.user,
-      securityKey: formData.securityKey
-    }
-
     try {
+      const transferData = {
+        user: formData.user,
+        securityKey: formData.securityKey
+      }
       const userData = await getClient(transferData);
-      onLoginSuccess(userData);
-    } catch (err) {
+      handleLoginSuccess(userData);
+    } catch (e) {
       alert('Error en el inicio de sesión, por favor intente nuevamente.');
     }
   };
@@ -37,7 +36,7 @@ export const Login = ({ onLoginSuccess }) => {
       <form onSubmit={handleSubmit}>
         <label>
           Usuario:
-          <input type="text" name="user" value={formData.user} onChange={handleChange} required minLength="8" title="El usuario debe tener al menos 8 caracteres" />
+          <input type="text" name="user" value={formData.user} onChange={handleChange} required pattern=".{8,}"  title="El usuario debe tener al menos 8 caracteres" />
         </label>
         <label>
           Clave:

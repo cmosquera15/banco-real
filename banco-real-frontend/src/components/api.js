@@ -1,54 +1,32 @@
+import axios from 'axios';
+
+
 const URL_DB = "http://localhost:8080/banco-real-backend-1.0-SNAPSHOT";
 
-export const createClient = async (formData) => {
+export const getClient = async (transferData) => {
   try {
-    const response = await fetch(`${URL_DB}/signup`, {
-      method: 'POST',
+    const response = await axios.post(`${URL_DB}/login`, transferData, {
       headers: {
         'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
+      }
     });
-
-    if (!response.ok) {
-      throw new Error('Error en el registro');
-    }
-
-    const jsonResponse = await response.json();
-
-    if (jsonResponse.message !== "Registro exitoso") {
-      throw new Error('Error en el registro: ' + jsonResponse.message);
-    }
-
-    return jsonResponse;
+    return response.data;
   } catch (error) {
-    throw new Error('Error en el registro: ' + error.message);
+    throw new Error('Error en la autenticación');
   }
 };
 
-export const getClient = async (formData) => {
+
+export const createClient = async (transferData) => {
   try {
-    const response = await fetch(`${URL_DB}/login`, {
-      method: 'POST',
+    const response = await axios.post(`${URL_DB}/signup`, transferData, {
       headers: {
         'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
+      }
     });
-
-    if (!response.ok) {
-      throw new Error('Error en el inicio de sesión');
-    }
-
-    const jsonResponse = await response.json();
-
-    if (jsonResponse.message !== "Inicio de sesión exitoso") {
-      throw new Error('Error en el inicio de sesión: ' + jsonResponse.message);
-    }
-
-    return jsonResponse;
+    return response.data;
   } catch (error) {
-    throw new Error('Error en el inicio de sesión: ' + error.message);
+    throw new Error('Error en el registro');
   }
 };
 
@@ -69,7 +47,7 @@ export const getAccountsByClientId = async (clientId) => {
 
 export const getTransactionsByAccountId = async (accountId) => {
   try {
-    const response = await fetch(`${URL_DB}/transactions?accountId=${accountId}`);
+    const response = await fetch(`${URL_DB}/account/transactions?accountId=${accountId}`);
 
     if (!response.ok) {
       throw new Error('Error fetching transactions');
@@ -84,7 +62,7 @@ export const getTransactionsByAccountId = async (accountId) => {
 
 export const withdrawMoney = async (withdrawData) => {
   try {
-    const response = await fetch(`${URL_DB}/withdraw`, {
+    const response = await fetch(`${URL_DB}/account/withdraw`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -105,7 +83,7 @@ export const withdrawMoney = async (withdrawData) => {
 
 export const transferMoney = async (transferData) => {
   try {
-    const response = await fetch(`${URL_DB}/transfer`, {
+    const response = await fetch(`${URL_DB}/account/transfer`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
