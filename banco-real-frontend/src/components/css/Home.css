@@ -1,9 +1,9 @@
 .Home {
-flex-direction: column;
-display: flex;
- align-items: center;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin-bottom: 17px;
 }
 
 .Home-header {
@@ -12,7 +12,7 @@ display: flex;
   justify-content: space-between;
   width: 100%;
   padding: 10px;
-  background-color: #3F5465;
+  margin: 0 400px;
   color: white;
   border-radius: 8px 8px 0 0;
 }
@@ -20,20 +20,21 @@ display: flex;
 .Home-header h2 {
   margin: 0;
   padding: 10px;
+  color: #364552;
 }
 
 #Home-header-logout-btn {
   padding: 8px 16px;
-  background-color: #CA3C25;
+  background-color: #e16f79;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 0px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 #Home-header-logout-btn:hover {
-  background-color: #9E2A1A;
+  background-color: #da3543;
 }
 
 .Home-main {
@@ -42,21 +43,16 @@ display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 20px;
 }
 
 .Home-accounts {
-  width: 80%;
-  margin-top: 20px;
+  width: 95%;
   padding: 20px;
-  background-color: #F4F4F9;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .Home-accounts h3 {
   margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color: #3F5465;
 }
 
@@ -67,21 +63,21 @@ display: flex;
 }
 
 .Home-account-card {
-  padding: 15px;
+  padding: 18px 15px;
   border-radius: 8px;
-  background-color: #FFFFFF;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  background-color: #3F5465;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .Home-account-card:hover {
-  transform: translateY(-5px);
+  background-color: #324351;
+  
 }
 
 .Home-account-card p {
   margin: 5px 0;
-  color: #27343f;
+  color: white;
 }
 
 .Home-account-card p:first-child {

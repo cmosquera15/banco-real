@@ -11,12 +11,6 @@
   font-size: 24px;
 }
 
-.error {
-  color: red;
-  margin-bottom: 10px;
-  font-size: 14px;
-}
-
 form {
   display: flex;
   flex-direction: column;
@@ -38,7 +32,7 @@ label {
 input {
   padding: 12px;
   border: 1px solid #A8D1DC;
-  border-radius: 6px;
+  border-radius: 0;
   font-size: 16px;
   margin-top: 8px;
 }
@@ -48,12 +42,14 @@ input {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
-button {
+.button-section button {
+  width: 100%;
   padding: 12px;
   border: none;
-  border-radius: 6px;
+  border-radius: 0;
   background-color: #3F5465;
   color: white;
   font-size: 18px;
@@ -62,6 +58,6 @@ button {
   margin-top: 10px;
 }
 
-button:hover {
+.button-section button:hover {
   background-color: #27343f;
 }

@@ -72,7 +72,9 @@ export const SignUp = ({ onSignUpSuccess }) => {
               No. de identificación:
               <input type="text" name="clientId" value={formData.clientId} onChange={handleChange} required pattern="[A-Za-z0-9]{8,50}" title="El no. de identificación solo debe contener entre 8 y 50 números y/o letras"/>
             </label>
-            <button type="button" onClick={validateFormPart1}>Continuar</button>
+            <div className='button-section'>
+              <button type="button" onClick={validateFormPart1}>Continuar</button>
+            </div>
           </div>
         )}
         {formPart === 2 && (

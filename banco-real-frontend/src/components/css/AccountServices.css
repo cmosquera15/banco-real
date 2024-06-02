@@ -3,10 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  background-color: #CAE8DE;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 95%;
 }
 
 .AccountServices h2 {
@@ -19,7 +16,6 @@
   padding: 10px 20px;
   margin-bottom: 20px;
   border: none;
-  border-radius: 4px;
   background-color: #3F5465;
   color: white;
   font-size: 16px;
@@ -35,20 +31,88 @@
   display: flex;
   justify-content: space-around;
   width: 100%;
+  margin-bottom: 150px;
 }
 
-.service-button {
-  background-color: transparent;
+.services-buttons .service-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-button-transfer {
+  background-color: #77dd77;
   border: none;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: background-color 0.3s ease;
+  border-radius: 100%;
+  width: 135px;
+  height: 135px;
+  margin-left: 70px;
 }
 
-.service-button img {
-  width: 50px;
-  height: 50px;
+.service-button-transfer img {
+  width: 80px;
+  height: 80px;
 }
 
-.service-button:hover {
-  transform: scale(1.1);
+.service-button-transfer:hover {
+  background-color: #5acb5a;
+}
+
+.service-button-withdraw {
+  background-color: #e16f79;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 100%;
+  width: 135px;
+  height: 135px;
+}
+
+.service-button-withdraw img {
+  width: 80px;
+  height: 80px;
+}
+
+.service-button-withdraw:hover {
+  background-color: #da3543;
+}
+
+.service-button-history {
+  background-color: #F8DC7B;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 100%;
+  width: 135px;
+  height: 135px;
+  margin-right: 70px;
+}
+
+.service-button-history img {
+  width: 80px;
+  height: 80px;
+}
+
+.service-button-history:hover {
+  background-color: #f4d04e;
+}
+
+.text-transfer,
+.text-withdraw,
+.text-history {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 18px;
+  color: #27343f;
+}
+
+.text-transfer {
+  margin-left: 65px;
+}
+
+.text-history {
+  margin-right: 65px;
 }

@@ -29,6 +29,7 @@
   background-color: #A8D1DC;
   color: #27343f;
   border: none;
+  border-radius: 0%;
   cursor: pointer;
   font-size: calc(1px + 2vmin);
 }
@@ -74,6 +75,7 @@
   background-color: #3F5465;
   color: white;
   border: #3F5465 1px solid;
+  border-radius: 0;
   margin: calc(10px + 1vmin) 0;
   width: calc(60% - 20px);
   height: calc(16% - 20px);
