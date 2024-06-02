@@ -64,10 +64,10 @@ export const MoneyTransfer = ({ client, account, onBack }) => {
         <form onSubmit={handleSubmit}>
           {step === 1 ? (
             <>
-              <label htmlFor='accountNumber' className='MoneyTransfer-label'>Número de cuenta</label>
+              <label htmlFor='accountNumber' className='MoneyTransfer-label'>Número de cuenta:</label>
               <input type='text' id='accountNumber' name='accountNumber' pattern='[0-9]{10}' title='El número de cuenta debe tener 10 dígitos' required value={formData.accountNumber} onChange={handleChange}/>
 
-              <label className='MoneyTransfer-label'>Tipo de cuenta</label>
+              <label className='MoneyTransfer-label'>Tipo de cuenta:</label>
               <div className='radio-group'>
                 <div className='radio-option'>
                   <input type='radio' id='current' name='accountType' value='current' checked={formData.accountType === 'current'} onChange={handleChange}/>
@@ -87,10 +87,10 @@ export const MoneyTransfer = ({ client, account, onBack }) => {
             </>
           ) : (
             <>
-              <label className='MoneyTransfer-label'>Cantidad a enviar</label>
+              <label className='MoneyTransfer-label'>Cantidad a enviar:</label>
               <input type='number' id='amount' name='amount' min='0.01' step='0.01' required value={formData.amount} onChange={handleChange}/>
 
-              <label className='MoneyTransfer-label'>Seleccionar moneda</label>
+              <label className='MoneyTransfer-label'>Seleccionar moneda:</label>
               <select id='currency' name='currency' value={formData.currency} onChange={handleChange}>
                 <option value='COP'>COP</option>
                 <option value='USD'>USD</option>

@@ -43,10 +43,10 @@ export const MoneyWithdrawal = ({ client, onBack, account }) => {
       <fieldset>
         <legend>Retirar Dinero</legend>
         <form onSubmit={handleSubmit}>
-          <label className='MoneyWithdrawal-label'>Cantidad a retirar</label>
+          <label className='MoneyWithdrawal-label'>Cantidad a retirar:</label>
           <input type='number' id='amount' name='amount' min='0.01' step='0.01' required value={formData.amount} onChange={handleChange}/>
 
-          <label className='MoneyWithdrawal-label'>Seleccionar moneda</label>
+          <label className='MoneyWithdrawal-label'>Seleccionar moneda:</label>
           <select id='currency' name='currency' value={formData.currency} onChange={handleChange}>
             <option value='COP'>COP</option>
             <option value='USD'>USD</option>

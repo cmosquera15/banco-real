@@ -49,23 +49,23 @@
   width: calc(54.2% - 20px);
   padding: 12px;
   margin-bottom: 15px;
+  margin-left: 147px;
   border: 1px solid #A8D1DC;
   font-size: 16px;
+  align-self: flex-start;
 }
 
 .MoneyTransfer .radio-group {
   display: flex;
   flex-direction: column;
+  margin-right: 100px;
+  align-self: flex-start;
 }
 
 .MoneyTransfer .radio-group div {
   display: flex;
-  align-items: center;
+  align-items: start;
   margin-bottom: 10px;
-}
-
-.MoneyTransfer .radio-group input[type='radio'] {
-  margin-right: 10px;
 }
 
 .MoneyTransfer .next-button,
@@ -100,6 +100,7 @@
 .MoneyTransfer .submit-button {
   background-color: #4CAF50;
   color: white;
+  padding: 10px 130px;
 }
 
 .MoneyTransfer .submit-button:hover {
