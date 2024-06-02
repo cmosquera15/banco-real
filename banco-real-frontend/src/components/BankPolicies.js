@@ -33,7 +33,7 @@ export const BankPolicies = ({ onClose }) => {
             <li><strong>Cuenta de ahorros:</strong> 0.02%</li>
             <li><strong>Cuenta suprema:</strong> 0.01%</li>
           </ul>
-          <p><strong>Nota:</strong> Si el monto de la transacción es menor a 50.000 pesos, se cobrarán 100 pesos.</p>
+          <p><strong>Nota:</strong> Si el monto de la transacción es menor a 50.000 pesos, se cobrarán 100 pesos, y se pedirá una clave adicional para continuar.</p>
         </section>
       </div>
     </div>

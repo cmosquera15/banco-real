@@ -30,10 +30,27 @@ export const MoneyTransfer = ({ client, account, onBack }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(`Updating ${name} with value:`, value);
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
+    }));
+  };
+
+  const handleAmountChange = (e) => {
+    const { name, value } = e.target;
+    const formattedValue = value.replace(/\D/g, '');
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: formattedValue,
+    }));
+  };
+
+  const handleAmountBlur = (e) => {
+    const { name, value } = e.target;
+    const formattedValue = parseFloat(value.replace(/\D/g, '')).toLocaleString('es-CO');
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: formattedValue,
     }));
   };
 
@@ -44,9 +61,9 @@ export const MoneyTransfer = ({ client, account, onBack }) => {
         senderClientId: client.clientId,
         senderAccountId: account.accountId,
         recipientAccountId: formData.accountNumber,
-        amount: formData.amount,
+        amount: parseFloat(formData.amount.replace(/\./g, '')),
         currency: formData.currency,
-        securityKey: formData.securityKey
+        securityKey: formData.securityKey,
       };
       await transferMoney(transferData);
       alert('Dinero enviado con éxito');
@@ -65,20 +82,20 @@ export const MoneyTransfer = ({ client, account, onBack }) => {
           {step === 1 ? (
             <>
               <label htmlFor='accountNumber' className='MoneyTransfer-label'>Número de cuenta:</label>
-              <input type='text' id='accountNumber' name='accountNumber' pattern='[0-9]{10}' title='El número de cuenta debe tener 10 dígitos' required value={formData.accountNumber} onChange={handleChange}/>
+              <input type='text' id='accountNumber' name='accountNumber' pattern='[0-9]{10}' title='El número de cuenta debe tener 10 dígitos' required value={formData.accountNumber} onChange={handleChange} />
 
               <label className='MoneyTransfer-label'>Tipo de cuenta:</label>
               <div className='radio-group'>
                 <div className='radio-option'>
-                  <input type='radio' id='current' name='accountType' value='current' checked={formData.accountType === 'current'} onChange={handleChange}/>
+                  <input type='radio' id='current' name='accountType' value='current' checked={formData.accountType === 'current'} onChange={handleChange} />
                   <label htmlFor='current'>Corriente</label>
                 </div>
                 <div className='radio-option'>
-                  <input type='radio' id='savings' name='accountType' value='savings' checked={formData.accountType === 'savings'} onChange={handleChange}/>
+                  <input type='radio' id='savings' name='accountType' value='savings' checked={formData.accountType === 'savings'} onChange={handleChange} />
                   <label htmlFor='savings'>Ahorros</label>
                 </div>
                 <div className='radio-option'>
-                  <input type='radio' id='supreme' name='accountType' value='supreme' checked={formData.accountType === 'supreme'} onChange={handleChange}/>
+                  <input type='radio' id='supreme' name='accountType' value='supreme' checked={formData.accountType === 'supreme'} onChange={handleChange} />
                   <label htmlFor='supreme'>Suprema</label>
                 </div>
               </div>
@@ -88,7 +105,7 @@ export const MoneyTransfer = ({ client, account, onBack }) => {
           ) : (
             <>
               <label className='MoneyTransfer-label'>Cantidad a enviar:</label>
-              <input type='number' id='amount' name='amount' min='0.01' step='0.01' required value={formData.amount} onChange={handleChange}/>
+              <input type='text' id='amount' name='amount' required value={formData.amount} onChange={handleAmountChange} onBlur={handleAmountBlur} />
 
               <label className='MoneyTransfer-label'>Seleccionar moneda:</label>
               <select id='currency' name='currency' value={formData.currency} onChange={handleChange}>
@@ -98,7 +115,7 @@ export const MoneyTransfer = ({ client, account, onBack }) => {
               </select>
 
               <label className='MoneyTransfer-label'>Escriba su clave para confirmar</label>
-              <input type='password' id='security-key' name='securityKey' required value={formData.securityKey} onChange={handleChange}/>
+              <input type='password' id='security-key' name='securityKey' required value={formData.securityKey} onChange={handleChange} />
 
               <button className='prev-button' onClick={handlePrevStep}>Regresar</button>
               <button type='submit' className='submit-button'>Enviar</button>

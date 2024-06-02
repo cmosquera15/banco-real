@@ -45,6 +45,10 @@ export const TransactionHistory = ({ account, onBack }) => {
     return date.toLocaleDateString('es-ES', options);
   };
 
+  const formatBalance = (balance) => {
+    return parseFloat(balance).toLocaleString('es-CO');
+  };
+
   if (!account) {
     return (
       <div>
@@ -76,7 +80,7 @@ export const TransactionHistory = ({ account, onBack }) => {
                 {transactions.map(transaction => (
                   <tr key={transaction.transactionId}>
                     <td>{transaction.transactionId}</td>
-                    <td>{transaction.amount}</td>
+                    <td>{formatBalance(transaction.amount)}</td>
                     <td>{transaction.currency}</td>
                     <td>{getTransactionTypeLabel(transaction.transactionType)}</td>
                     <td>{formatDate(transaction.transactionDate)}</td>

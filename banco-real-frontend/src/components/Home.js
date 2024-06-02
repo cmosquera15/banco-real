@@ -23,6 +23,7 @@ export const Home = ({ user, onLogout }) => {
     }, [user]);
 
     const handleAccountClick = (accountId) => {
+        document.getElementById('Home').style.marginBottom = '6px';
         const account = accounts.find(account => account.accountId === accountId);
         if (account.accountStatus === 'CANCELED') {
             alert('Su cuenta está cancelada.');
@@ -34,6 +35,7 @@ export const Home = ({ user, onLogout }) => {
     };
 
     const handleBack = () => {
+        document.getElementById('Home').style.marginBottom = '250px';
         setSelectedAccount(null);
     };
 
@@ -63,8 +65,12 @@ export const Home = ({ user, onLogout }) => {
         }
     };
 
+    const formatBalance = (balance) => {
+        return balance.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }).replace('COP', '').trim();
+    };
+
     return (
-        <div className='Home'>
+        <div id='Home' className='Home'>
             <div className='Home-header'>
                 <h2>Bienvenido, {user.firstName} {user.lastName}</h2>
                 <button onClick={onLogout} id='Home-header-logout-btn'>Cerrar sesión</button>
@@ -82,7 +88,7 @@ export const Home = ({ user, onLogout }) => {
                                     <div className='Home-account-card' key={account.accountId} onClick={() => handleAccountClick(account.accountId)}>
                                         <p>ID: {account.accountId}</p>
                                         <p>Estado: {getAccountStatusLabel(account.accountStatus)}</p>
-                                        <p>Saldo: ${account.balance}</p>
+                                        <p>Saldo: {formatBalance(account.balance)}</p>
                                         <p>Tipo: {getAccountTypeLabel(account.accountType)}</p>
                                     </div>
                                 ))
