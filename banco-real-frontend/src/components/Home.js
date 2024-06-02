@@ -62,6 +62,7 @@ export const Home = ({ user, onLogout }) => {
                 return accountType;
         }
     };
+    
 
     return (
         <div className='Home'>

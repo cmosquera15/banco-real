@@ -24,7 +24,7 @@ export const createClient = async (transferData) => {
         'Content-Type': 'application/json'
       }
     });
-    return response.data;
+    return response;
   } catch (error) {
     throw new Error('Error en el registro');
   }

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './css/Login.css';
 import { getClient } from './api';
 
-export const Login = ({ handleLoginSuccess }) => {
+export const Login = ({ onLoginSuccess }) => {
   const [formData, setFormData] = useState({
     user: '',
     securityKey: ''
@@ -24,9 +24,14 @@ export const Login = ({ handleLoginSuccess }) => {
         securityKey: formData.securityKey
       }
       const userData = await getClient(transferData);
-      handleLoginSuccess(userData);
+      if (userData.client) {
+        onLoginSuccess(userData.client);
+      } else {
+        throw new Error('Error en el inicio de sesión, datos de usuario incorrectos.');
+      }
     } catch (e) {
       alert('Error en el inicio de sesión, por favor intente nuevamente.');
+      console.error('Login error:', e);
     }
   };
 

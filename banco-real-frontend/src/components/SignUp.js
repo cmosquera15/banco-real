@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './css/SignUp.css';
 import { createClient } from './api';
 
-export const SignUp = ({ handleLoginSuccess }) => {
+export const SignUp = ({ onSignUpSuccess }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -48,7 +48,7 @@ export const SignUp = ({ handleLoginSuccess }) => {
         securityKey: formData.securityKey
       }
       const userData = await createClient(transferData);
-      handleLoginSuccess(userData);
+      onSignUpSuccess(userData);
     } catch (e) {
       alert ('Error en el registro, por favor intente nuevamente.')
     }
