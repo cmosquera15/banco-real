@@ -52,17 +52,16 @@ export const Home = ({ user, onLogout }) => {
 
     const getAccountTypeLabel = (accountType) => {
         switch (accountType) {
-            case 'CurrentAccount':
+            case 'class com.bancoreal.model.CurrentAccount':
                 return 'Corriente';
-            case 'SavingAccount':
+            case 'class com.bancoreal.model.SavingAccount':
                 return 'Ahorros';
-            case 'SupremeAccount':
+            case 'class com.bancoreal.model.SupremeAccount':
                 return 'Suprema';
             default:
                 return accountType;
         }
     };
-    
 
     return (
         <div className='Home'>
