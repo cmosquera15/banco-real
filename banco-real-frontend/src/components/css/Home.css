@@ -1,0 +1,91 @@
+.Home {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 250px;
+}
+
+.Home-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  margin: 0 400px;
+  color: white;
+  border-radius: 8px 8px 0 0;
+}
+
+.Home-header h2 {
+  margin: 0;
+  padding: 10px;
+  color: #364552;
+}
+
+#Home-header-logout-btn {
+  padding: 8px 16px;
+  background-color: #e16f79;
+  color: white;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#Home-header-logout-btn:hover {
+  background-color: #da3543;
+}
+
+.Home-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.Home-accounts {
+  width: 95%;
+  padding: 20px;
+}
+
+.Home-accounts h3 {
+  margin: 0;
+  margin-bottom: 20px;
+  color: #3F5465;
+}
+
+.Home-accounts-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+
+.Home-account-card {
+  padding: 18px 15px;
+  border-radius: 8px;
+  background-color: #3F5465;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Home-account-card:hover {
+  background-color: #324351;
+  
+}
+
+.Home-account-card p {
+  margin: 5px 0;
+  color: white;
+}
+
+.Home-account-card p:first-child {
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .Home-accounts-list {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}

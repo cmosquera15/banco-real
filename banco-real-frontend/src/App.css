@@ -1,0 +1,110 @@
+* {
+  font-family: Roboto;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.App-header {
+  background-color: #A8D1DC;
+  height: 11vh;
+  font-size: calc(7px + 2vmin);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+#App-header-politic-and-ethic {
+  margin-right: calc(15px + 1vmin);
+}
+
+#App-header-politic-and-ethic button {
+  margin: 0;
+  height: 11vh;
+  background-color: #A8D1DC;
+  color: #27343f;
+  border: none;
+  border-radius: 0%;
+  cursor: pointer;
+  font-size: calc(1px + 2vmin);
+}
+
+#App-header-politic-and-ethic button:hover {
+  background-color: #3F5465;
+  color: white;
+}
+
+#App-title {
+  cursor: pointer;
+  width: calc(60px + 8vmax);
+  height: auto;
+  margin-left: calc(15px + 1vmin);
+}
+
+.App-main {
+  background-color: #CAE8DE;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(4px + 2vmin);
+  transition: all 0.3s ease;
+}
+
+.App-main-expanded {
+  flex-grow: 1;
+}
+
+.App-main-user-management {
+  background-color: #A8D1DC;
+  width: 50vh;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#App-SignUp-btn, #App-Login-btn {
+  background-color: #3F5465;
+  color: white;
+  border: #3F5465 1px solid;
+  border-radius: 0;
+  margin: calc(10px + 1vmin) 0;
+  width: calc(60% - 20px);
+  height: calc(16% - 20px);
+  font-size: calc(5px + 2vmin);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#App-SignUp-btn:hover, #App-Login-btn:hover {
+  background-color: #27343f;
+  color: white;
+}
+
+.App-footer {
+  background-color: #3F5465;
+  height: 9vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  flex-shrink: 0;
+}
+
+.App-footer img {
+  width: calc(30px + 8vmax);
+  height: auto;
+  margin-right: calc(15px + 1vmin);
+}
+
+.App-footer p {
+  margin-left: calc(15px + 1vmin);
+}
